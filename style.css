@@ -198,7 +198,7 @@ h3,
   width: min(1100px, 92vw);
   min-height: calc(100vh - 70px);
   display: grid;
-  grid-template-columns: minmax(340px, 1.1fr) minmax(280px, 420px);
+  grid-template-columns: minmax(340px, 1fr) minmax(320px, 540px);
   gap: clamp(1.4rem, 3vw, 3rem);
   align-items: center;
 }
@@ -248,14 +248,16 @@ h3,
   color: #3c3833;
 }
 
+.title-line {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .title-line span,
 .tagline span {
   display: block;
   margin-top: 0.3rem;
-}
-
-.title-line span[lang="am"] {
-  text-align: center;
 }
 
 .tagline span[lang="am"] {
@@ -339,7 +341,7 @@ h3,
 }
 
 .portrait-placeholder {
-  width: min(520px, 98%);
+  width: min(560px, 100%);
   aspect-ratio: 4 / 5;
   border-radius: 24px;
   overflow: hidden;
@@ -887,7 +889,9 @@ blockquote cite {
   .hero-portrait {
     order: -1;
     padding-right: 0;
+    margin-top: 0;
     justify-content: center;
+    align-self: auto;
   }
 
   .services-grid,
