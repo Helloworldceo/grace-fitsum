@@ -51,7 +51,7 @@
         }
       })
       .catch(function () {
-        status.textContent = '\u2717 Something went wrong. Please try again or email hello@gracefitsum.com directly.';
+        status.textContent = '\u2717 Something went wrong. Please try again or email Info.gracefullprod@gmail.com directly.';
         status.classList.add('form-status--error');
       })
       .finally(function () {
