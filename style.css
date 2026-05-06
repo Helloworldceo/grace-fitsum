@@ -148,9 +148,9 @@ h3,
   width: min(470px, 88%);
   aspect-ratio: 4 / 5;
   background:
-    linear-gradient(150deg, rgba(166, 137, 102, 0.84), rgba(90, 74, 56, 0.68)),
-    url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1100&q=80")
-      center / cover;
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.25), transparent 38%),
+    radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.18), transparent 36%),
+    linear-gradient(150deg, rgba(166, 137, 102, 0.9), rgba(90, 74, 56, 0.72));
   border-radius: 28px;
   box-shadow: var(--soft-shadow);
   position: relative;
