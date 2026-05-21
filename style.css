@@ -546,6 +546,9 @@ h3,
   padding: 1.1rem;
   box-shadow: var(--shadow);
   animation: fadeInUp 0.5s ease-out both;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  text-decoration: none;
 }
 
 .gallery-featured { animation-delay: 0s; }
@@ -556,6 +559,16 @@ h3,
 .gallery-item h3 {
   margin: 0 0 0.55rem;
   font-size: 1.36rem;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 42px rgba(35, 32, 29, 0.12);
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid rgba(166, 137, 102, 0.45);
+  outline-offset: 4px;
 }
 
 .gallery-featured {
@@ -608,6 +621,7 @@ h3,
 .gallery-photo-4 p {
   color: rgba(255, 255, 255, 0.92);
 }
+
 
 .videos-intro {
   max-width: 60ch;
