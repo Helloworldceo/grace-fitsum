@@ -1,4 +1,4 @@
-# Grace Fitsum Portfolio
+# Tsega Fitsum Portfolio
 
 A high-end, single-page bilingual (English + Amharic) wedding and event portfolio, designed for GitHub Pages.
 
