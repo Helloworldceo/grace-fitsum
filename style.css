@@ -1058,6 +1058,7 @@ body[data-theme="brochure"] .theme-switcher-button.is-active {
 .gallery-photo-2 { animation-delay: 0.1s; }
 .gallery-photo-3 { animation-delay: 0.2s; }
 .gallery-photo-4 { animation-delay: 0.3s; }
+.gallery-photo-5 { animation-delay: 0.4s; }
 
 .gallery-item h3 {
   margin: 0 0 0.55rem;
@@ -1082,7 +1083,7 @@ body[data-theme="brochure"] .theme-switcher-button.is-active {
   color: #fff;
   background:
     linear-gradient(to top, rgba(26, 22, 19, 0.75), rgba(26, 22, 19, 0.2)),
-    url("photo1.jpg") center 30% / cover no-repeat;
+    url("Grace/1.JPG") center 30% / cover no-repeat;
   border-color: rgba(255, 255, 255, 0.35);
 }
 
@@ -1092,7 +1093,8 @@ body[data-theme="brochure"] .theme-switcher-button.is-active {
 
 .gallery-photo-2,
 .gallery-photo-3,
-.gallery-photo-4 {
+.gallery-photo-4,
+.gallery-photo-5 {
   min-height: 320px;
   display: flex;
   flex-direction: column;
@@ -1104,24 +1106,31 @@ body[data-theme="brochure"] .theme-switcher-button.is-active {
 .gallery-photo-2 {
   background:
     linear-gradient(to top, rgba(26, 22, 19, 0.72), rgba(26, 22, 19, 0.24)),
-    url("photo2.jpg") center / cover no-repeat;
+    url("Grace/2.JPG") center / cover no-repeat;
 }
 
 .gallery-photo-3 {
   background:
     linear-gradient(to top, rgba(26, 22, 19, 0.72), rgba(26, 22, 19, 0.24)),
-    url("photo3.jpg") center / cover no-repeat;
+    url("Grace/3.JPG") center / cover no-repeat;
 }
 
 .gallery-photo-4 {
   background:
     linear-gradient(to top, rgba(26, 22, 19, 0.72), rgba(26, 22, 19, 0.24)),
-    url("photo4.jpg") center / cover no-repeat;
+    url("Grace/4.JPG") center / cover no-repeat;
+}
+
+.gallery-photo-5 {
+  background:
+    linear-gradient(to top, rgba(26, 22, 19, 0.72), rgba(26, 22, 19, 0.24)),
+    url("Grace/5.JPG") center / cover no-repeat;
 }
 
 .gallery-photo-2 p,
 .gallery-photo-3 p,
-.gallery-photo-4 p {
+.gallery-photo-4 p,
+.gallery-photo-5 p {
   color: rgba(255, 255, 255, 0.92);
 }
 
@@ -1152,53 +1161,16 @@ body[data-theme="brochure"] .theme-switcher-button.is-active {
 .video-card:nth-child(2) { animation-delay: 0.12s; }
 .video-card:nth-child(3) { animation-delay: 0.24s; }
 
-.video-poster {
-  position: relative;
+.video-media {
+  width: 100%;
   min-height: 280px;
+  max-height: 280px;
   border-radius: 14px;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: 1rem;
   margin-bottom: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.video-poster::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(26, 22, 19, 0.78), rgba(26, 22, 19, 0.18));
-}
-
-.video-poster-one {
-  background: url("photo1.jpg") center / cover no-repeat;
-}
-
-.video-poster-two {
-  background: url("photo2.jpg") center / cover no-repeat;
-}
-
-.video-poster-three {
-  background: url("photo3.jpg") center / cover no-repeat;
-}
-
-.video-play {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 70px;
-  padding: 0.45rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(6px);
-  color: #fff;
-  font-size: 0.84rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  border: 1px solid rgba(166, 137, 102, 0.28);
+  background: #000;
+  object-fit: cover;
 }
 
 .video-card h3 {
