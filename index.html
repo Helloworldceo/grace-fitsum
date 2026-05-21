@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=20260521e" />
   </head>
   <body>
     <header class="site-header">
@@ -30,6 +30,11 @@
           <span class="brand-name">House of Grace Events</span>
         </span>
       </a>
+      <div class="theme-switcher">
+        <button class="theme-switcher-button theme-switcher-toggle is-active" type="button" aria-pressed="false" aria-label="Switch to brochure background" title="Switch to brochure background">
+          <span class="theme-switcher-icon" aria-hidden="true">◐</span>
+        </button>
+      </div>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -48,7 +53,7 @@
           <h1>Tsega Fitsum (Grace)</h1>
           <div class="hero-copy-group">
             <p class="title-line">
-              Founder, Wedding Planner &amp; Event Organizer
+              Founder, Certified Professional Wedding Planner &amp; Event Organizer
               <span lang="am">የሰርግ እና የበዓላት አዘጋጅ</span>
             </p>
           </div>
@@ -82,10 +87,12 @@
       <section id="about" class="about section">
         <div class="section-heading reveal">
           <div class="about-tagline-shell">
+            <div class="about-tagline-particles" aria-hidden="true"></div>
+            <div class="about-tagline-icons" aria-hidden="true"></div>
             <p class="about-tagline">
-              <span class="about-tagline-line">Your special day is our priority!</span>
+              <span class="about-tagline-line about-tagline-line-primary">Your special day is our priority! <span class="about-tagline-heart" aria-hidden="true">&hearts;</span></span>
               <span class="about-tagline-divider" aria-hidden="true"></span>
-              <span class="about-tagline-line" lang="am">ለልዩ ቀንዎ ቅድሚያ እንሰጣለን!</span>
+              <span class="about-tagline-line about-tagline-line-secondary" lang="am">ለልዩ ቀንዎ ቅድሚያ እንሰጣለን!</span>
             </p>
           </div>
           <p class="eyebrow">About Grace / <span lang="am">ስለ ግሬስ</span></p>
@@ -170,6 +177,12 @@
             <h3>Traditional &amp; Modern Weddings</h3>
             <p lang="am">ባህላዊ እና ዘመናዊ ሰርጎች</p>
             <p>Celebrations that blend cultural richness with a refined contemporary atmosphere.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <h3>Photoshoot Assistance</h3>
+            <p lang="am">በስቱዲዮ ወይም በቦታው የፎቶ ሾት እገዛ</p>
+            <p>Photoshoot assistance in the studio and on location.</p>
           </article>
 
           <article class="service-card reveal">
@@ -516,6 +529,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260521e"></script>
   </body>
 </html>
