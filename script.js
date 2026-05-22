@@ -161,3 +161,160 @@
   }
 })();
 
+// Masonry gallery with filters and lightbox
+(function () {
+  var photos = [
+    { cat: 'wedding', name: 'Photo 1', venue: 'House of Grace Events', src: '1.JPG', alt: 'Gallery photo 1', height: 320 },
+    { cat: 'reception', name: 'Photo 2', venue: 'House of Grace Events', src: '2.JPG', alt: 'Gallery photo 2', height: 210 },
+    { cat: 'decor', name: 'Photo 3', venue: 'House of Grace Events', src: '3.JPG', alt: 'Gallery photo 3', height: 260 },
+    { cat: 'wedding', name: 'Photo 4', venue: 'House of Grace Events', src: '4.JPG', alt: 'Gallery photo 4', height: 380 },
+    { cat: 'intimate', name: 'Photo 5', venue: 'House of Grace Events', src: '5.JPG', alt: 'Gallery photo 5', height: 230 },
+    { cat: 'decor', name: 'Photo 6', venue: 'House of Grace Events', src: '6.JPG', alt: 'Gallery photo 6', height: 290 },
+    { cat: 'reception', name: 'Photo 7', venue: 'House of Grace Events', src: '7.PNG', alt: 'Gallery photo 7', height: 200 },
+    { cat: 'wedding', name: 'Photo 8', venue: 'House of Grace Events', src: '8.PNG', alt: 'Gallery photo 8', height: 340 },
+    { cat: 'intimate', name: 'Photo 9', venue: 'House of Grace Events', src: '9.JPG', alt: 'Gallery photo 9', height: 270 }
+  ];
+
+  var grid = document.getElementById('gallery-grid');
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImage = document.getElementById('lb-image');
+  var lightboxCaption = document.getElementById('lb-caption');
+  var prevButton = document.getElementById('lb-prev');
+  var nextButton = document.getElementById('lb-next');
+  var closeButton = document.getElementById('lb-close');
+  var filterButtons = document.querySelectorAll('.filter-btn');
+  var visibleItems = [];
+  var currentIdx = -1;
+  var touchStartX = 0;
+  var touchEndX = 0;
+
+  if (!grid || !lightbox || !lightboxImage || !lightboxCaption || !prevButton || !nextButton || !closeButton) {
+    return;
+  }
+
+  function buildGallery(filter) {
+    grid.innerHTML = '';
+    visibleItems = filter === 'all' ? photos.slice() : photos.filter(function (photo) {
+      return photo.cat === filter;
+    });
+
+    visibleItems.forEach(function (photo, index) {
+      var item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'masonry-item';
+      item.dataset.idx = String(index);
+      item.innerHTML = [
+        '<img src="' + photo.src + '" alt="' + photo.alt + '" loading="lazy" />',
+        '<span class="item-overlay">',
+        '<span class="overlay-tag">' + photo.cat.charAt(0).toUpperCase() + photo.cat.slice(1) + '</span>',
+        '<span class="overlay-name">' + photo.name + '</span>',
+        '<span class="overlay-venue">' + photo.venue + '</span>',
+        '</span>'
+      ].join('');
+
+      item.addEventListener('click', function () {
+        openLightbox(index, item);
+      });
+
+      grid.appendChild(item);
+      setTimeout(function () {
+        item.classList.add('visible');
+      }, index * 70);
+    });
+  }
+
+  function renderLightbox() {
+    var photo = visibleItems[currentIdx];
+
+    if (!photo) {
+      return;
+    }
+
+    lightboxImage.src = photo.src;
+    lightboxImage.alt = photo.alt;
+    lightboxCaption.innerHTML = [
+      '<span class="overlay-tag">' + photo.cat.charAt(0).toUpperCase() + photo.cat.slice(1) + '</span>',
+      '<span class="overlay-name">' + photo.name + '</span>',
+      '<span class="overlay-venue">' + photo.venue + '</span>',
+      '<span class="lightbox-counter">' + String(currentIdx + 1) + ' / ' + String(visibleItems.length) + '</span>'
+    ].join('');
+  }
+
+  function openLightbox(index, trigger) {
+    currentIdx = index;
+    renderLightbox();
+    lightbox.hidden = false;
+    lightbox.dataset.lastTrigger = trigger ? trigger.dataset.idx : '';
+    document.body.classList.add('gallery-lightbox-open');
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.classList.remove('gallery-lightbox-open');
+  }
+
+  function step(direction) {
+    currentIdx = (currentIdx + direction + visibleItems.length) % visibleItems.length;
+    renderLightbox();
+  }
+
+  closeButton.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function (event) {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  prevButton.addEventListener('click', function () {
+    step(-1);
+  });
+
+  nextButton.addEventListener('click', function () {
+    step(1);
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (lightbox.hidden) {
+      return;
+    }
+
+    if (event.key === 'Escape') {
+      closeLightbox();
+    }
+
+    if (event.key === 'ArrowLeft') {
+      step(-1);
+    }
+
+    if (event.key === 'ArrowRight') {
+      step(1);
+    }
+  });
+
+  lightboxImage.addEventListener('touchstart', function (event) {
+    touchStartX = event.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightboxImage.addEventListener('touchend', function (event) {
+    touchEndX = event.changedTouches[0].screenX;
+
+    if (Math.abs(touchEndX - touchStartX) < 40) {
+      return;
+    }
+
+    step(touchEndX < touchStartX ? 1 : -1);
+  }, { passive: true });
+
+  filterButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      filterButtons.forEach(function (item) {
+        item.classList.remove('active');
+      });
+      button.classList.add('active');
+      buildGallery(button.getAttribute('data-filter'));
+    });
+  });
+
+  buildGallery('all');
+})();
+
