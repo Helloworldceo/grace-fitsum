@@ -22,12 +22,12 @@
     }
   }
 
-  var storedTheme = 'classic';
+  var storedTheme = 'brochure';
 
   try {
-    storedTheme = window.localStorage.getItem(storageKey) || 'classic';
+    storedTheme = window.localStorage.getItem(storageKey) || 'brochure';
   } catch (error) {
-    storedTheme = 'classic';
+    storedTheme = 'brochure';
   }
 
   applyTheme(storedTheme);

@@ -257,6 +257,52 @@ body[data-theme="brochure"] .gallery-wrap {
   background: rgba(10, 16, 38, 0.48);
 }
 
+body[data-theme="brochure"] .packages {
+  background:
+    linear-gradient(rgba(22, 31, 73, 0.5), rgba(22, 31, 73, 0.62)),
+    url("1.JPG") center 18% / cover no-repeat;
+}
+
+body[data-theme="brochure"] .packages .eyebrow,
+body[data-theme="brochure"] .packages .section-heading h2,
+body[data-theme="brochure"] .packages-intro,
+body[data-theme="brochure"] .packages-signoff,
+body[data-theme="brochure"] .package-tier,
+body[data-theme="brochure"] .package-note,
+body[data-theme="brochure"] .package-list li {
+  color: #fff7e3;
+}
+
+body[data-theme="brochure"] .packages .eyebrow,
+body[data-theme="brochure"] .packages .section-heading h2,
+body[data-theme="brochure"] .packages-intro,
+body[data-theme="brochure"] .packages-signoff {
+  text-shadow: 0 10px 26px rgba(3, 6, 18, 0.42);
+}
+
+body[data-theme="brochure"] .package-card {
+  background: rgba(255, 248, 232, 0.88);
+  border-color: rgba(239, 211, 127, 0.24);
+  box-shadow: 0 18px 44px rgba(7, 10, 24, 0.18);
+}
+
+body[data-theme="brochure"] .package-card-featured {
+  background: rgba(255, 244, 214, 0.92);
+  border-color: rgba(239, 211, 127, 0.42);
+}
+
+body[data-theme="brochure"] .package-card .package-tier {
+  color: #7a5428;
+  text-shadow: none;
+}
+
+body[data-theme="brochure"] .package-note,
+body[data-theme="brochure"] .package-list li,
+body[data-theme="brochure"] .package-card p {
+  color: #423226;
+  text-shadow: none;
+}
+
 body[data-theme="brochure"] .gallery-title,
 body[data-theme="brochure"] .gallery-subtitle,
 body[data-theme="brochure"] .filter-btn {
@@ -306,6 +352,19 @@ body[data-theme="brochure"] .contact-item p,
 body[data-theme="brochure"] .business-card-download,
 body[data-theme="brochure"] .form-status {
   color: #f7f0db;
+}
+
+body[data-theme="brochure"] .packages .package-card .package-tier,
+body[data-theme="brochure"] .packages .package-card .package-note,
+body[data-theme="brochure"] .packages .package-card .package-list,
+body[data-theme="brochure"] .packages .package-card .package-list li,
+body[data-theme="brochure"] .packages .package-card p {
+  color: #423226;
+  text-shadow: none;
+}
+
+body[data-theme="brochure"] .packages .package-card .package-tier {
+  color: #7a5428;
 }
 
 body[data-theme="brochure"] .contact-item strong,
@@ -950,6 +1009,25 @@ body[data-theme="brochure"] .theme-switcher-button.is-active {
   text-align: center;
 }
 
+.services {
+  position: relative;
+  background:
+    linear-gradient(rgba(27, 24, 21, 0.5), rgba(27, 24, 21, 0.54)),
+    url("8.PNG") center 38% / cover no-repeat;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.services .eyebrow {
+  color: #fff;
+  font-weight: 700;
+}
+
+.services .section-heading h2 {
+  color: #fff;
+  text-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
 .services-grid {
   margin-top: 2rem;
   display: grid;
@@ -992,11 +1070,36 @@ body[data-theme="brochure"] .theme-switcher-button.is-active {
   font-size: 0.92rem;
 }
 
+.packages {
+  position: relative;
+  background:
+    linear-gradient(rgba(247, 244, 239, 0.62), rgba(247, 244, 239, 0.7)),
+    url("1.JPG") center 18% / cover no-repeat;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.packages .eyebrow,
+.packages .section-heading h2,
+.packages-intro,
+.packages-signoff {
+  color: #fff;
+  text-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.packages .eyebrow {
+  font-weight: 700;
+}
+
 .packages-intro {
   max-width: 62ch;
   margin: 0 auto 2rem;
   text-align: center;
-  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 8px 18px rgba(0, 0, 0, 0.34);
 }
 
 .packages-signoff {
@@ -1005,7 +1108,8 @@ body[data-theme="brochure"] .theme-switcher-button.is-active {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(1.5rem, 2.6vw, 2.2rem);
   font-style: italic;
-  color: var(--accent-deep);
+  color: rgba(255, 248, 231, 0.98);
+  text-shadow: 0 8px 18px rgba(0, 0, 0, 0.34);
 }
 
 .package-grid {
